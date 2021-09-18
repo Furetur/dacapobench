@@ -8,13 +8,13 @@ This docker image includes all dependencies to build the **h2** benchmark.
 2. Build this image with 
 
 ```shell
-sudo docker build --tag dacapo:h2 docker/h2
+sudo docker build --tag dacapo:h2-8 docker/jdk8/h2
 ```
 
 3. Run the container mounting the current directory and entering bash
 
 ```shell
-sudo docker run -it --rm -v $(pwd):/repo dacapo:h2 /bin/bash
+sudo docker run -it --rm -v $(pwd):/repo dacapo:h2-8 /bin/sh
 ```
 
 4. Now you are inside of the container
@@ -22,7 +22,7 @@ sudo docker run -it --rm -v $(pwd):/repo dacapo:h2 /bin/bash
 cd benchmarks
 
 # This script will create the local.properties file
-bash ../docker/h2/local-properties.sh
+sh ../docker/jdk8/h2/local-properties.sh
 
 # Start the build
 ant -Dbuild.target-jar=dacapo.jar h2
