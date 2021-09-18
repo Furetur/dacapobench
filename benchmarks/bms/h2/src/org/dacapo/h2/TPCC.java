@@ -303,6 +303,7 @@ public class TPCC {
         e.printStackTrace();
       }
     }
+    getConnection().commit();
     // done running the submitters
 
     System.out.println();
